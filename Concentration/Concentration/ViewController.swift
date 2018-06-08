@@ -10,7 +10,11 @@ import UIKit
 
 class ViewController: UIViewController {
     // MARK: Properties
-    @IBOutlet weak var flipedLabel: UILabel!
+    @IBOutlet weak var flipedLabel: UILabel! {
+        didSet {
+            updateFlipCountLabel()
+        }
+    }
     
     @IBOutlet var cardButtons: [UIButton]!
     
@@ -18,13 +22,24 @@ class ViewController: UIViewController {
     
     var flipedCount = 0 {
         didSet {
-            flipedLabel.text = "Fliped: \(flipedCount)"
+            updateFlipCountLabel()
         }
     }
     
-    var emojiChoices = ["🍎", "👻", "👿", "🎃", "🦇", "🍭", "🍬", "😱", "💀"]
+    private func updateFlipCountLabel() {
+        let attributes: [NSAttributedStringKey: Any] = [
+            .strokeWidth: 5.0,
+            .strokeColor: #colorLiteral(red: 1, green: 0.5781051517, blue: 0, alpha: 1),
+            ]
+        
+        let attributedString = NSAttributedString(string: "Filps:\(flipedCount)", attributes: attributes)
+        flipedLabel.attributedText = attributedString
+    }
     
-    var emoji = [Int: String]()
+    // private var emojiChoices = ["🍎", "👻", "👿", "🎃", "🦇", "🍭", "🍬", "😱", "💀"]
+    private var emojiChoices = "🍎👻👿🎃🦇🍭🍬😱💀"
+    
+    var emoji = [Card: String]()
     
     // MARK: Methods
     func updateViewFromModel() {
@@ -42,11 +57,12 @@ class ViewController: UIViewController {
     }
     
     func emoji(for card: Card) -> String {
-        if emoji[card.identifier] == nil, emojiChoices.count > 0 {
-            let randomIndex = Int(arc4random_uniform(UInt32(emojiChoices.count)))
-            emoji[card.identifier] = emojiChoices.remove(at: randomIndex)
+        if emoji[card] == nil, emojiChoices.count > 0 {
+//            let randomIndex = Int(arc4random_uniform(UInt32(emojiChoices.count)))
+            let randomIndex = emojiChoices.index(emojiChoices.startIndex, offsetBy: emojiChoices.count.arc4random)
+            emoji[card] = String(emojiChoices.remove(at: randomIndex))
         }
-        return emoji[card.identifier] ?? "?"
+        return emoji[card] ?? "?"
     }
     
     // MARK: Actions
@@ -67,9 +83,21 @@ class ViewController: UIViewController {
         
         // reset model
         game = Concentration(numberOfPairsOfCards: (cardButtons.count + 1) / 2)
-        emojiChoices = ["🍎", "👻", "👿", "🎃", "🦇", "🍭", "🍬", "😱", "💀"]
+        emojiChoices = "🍎👻👿🎃🦇🍭🍬😱💀"
         updateViewFromModel()
     }
     
+}
+
+extension Int {
+    var arc4random: Int {
+        if self > 0 {
+            return Int(arc4random_uniform(UInt32(self)))
+        } else if self < 0 {
+            return -Int(arc4random_uniform(UInt32(self)))
+        } else {
+            return 0
+        }
+    }
 }
 
