@@ -1,8 +1,8 @@
 //
 //  AppDelegate.swift
-//  todomvc
+//  TimeCounter
 //
-//  Created by Jamie on 2018/6/2.
+//  Created by Jamie on 2018/6/11.
 //  Copyright © 2018 Jamie. All rights reserved.
 //
 
