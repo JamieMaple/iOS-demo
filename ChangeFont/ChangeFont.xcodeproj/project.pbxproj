@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7D1637C720D031DB00F42A2C /* Gaspar_Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7D1637C220D02B4B00F42A2C /* Gaspar_Regular.otf */; };
+		7D1637C820D031DB00F42A2C /* MFJinHei_Noncommercial-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7D1637C320D02B4B00F42A2C /* MFJinHei_Noncommercial-Regular.ttf */; };
+		7D1637C920D031DB00F42A2C /* MFTongXin_Noncommercial-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7D1637C420D02B4B00F42A2C /* MFTongXin_Noncommercial-Regular.ttf */; };
+		7D1637CA20D031DB00F42A2C /* MFZhiHei_Noncommercial-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7D1637C120D02B4B00F42A2C /* MFZhiHei_Noncommercial-Regular.ttf */; };
 		7D61A6B620CECDF3005CAF77 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D61A6B520CECDF3005CAF77 /* AppDelegate.swift */; };
 		7D61A6B820CECDF3005CAF77 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D61A6B720CECDF3005CAF77 /* ViewController.swift */; };
 		7D61A6BB20CECDF3005CAF77 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D61A6B920CECDF3005CAF77 /* Main.storyboard */; };
@@ -15,6 +19,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7D1637C120D02B4B00F42A2C /* MFZhiHei_Noncommercial-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MFZhiHei_Noncommercial-Regular.ttf"; sourceTree = "<group>"; };
+		7D1637C220D02B4B00F42A2C /* Gaspar_Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Gaspar_Regular.otf; sourceTree = "<group>"; };
+		7D1637C320D02B4B00F42A2C /* MFJinHei_Noncommercial-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MFJinHei_Noncommercial-Regular.ttf"; sourceTree = "<group>"; };
+		7D1637C420D02B4B00F42A2C /* MFTongXin_Noncommercial-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MFTongXin_Noncommercial-Regular.ttf"; sourceTree = "<group>"; };
 		7D61A6B220CECDF3005CAF77 /* ChangeFont.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChangeFont.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D61A6B520CECDF3005CAF77 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7D61A6B720CECDF3005CAF77 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -35,6 +43,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7D1637C620D02B5900F42A2C /* fonts */ = {
+			isa = PBXGroup;
+			children = (
+				7D1637C220D02B4B00F42A2C /* Gaspar_Regular.otf */,
+				7D1637C320D02B4B00F42A2C /* MFJinHei_Noncommercial-Regular.ttf */,
+				7D1637C420D02B4B00F42A2C /* MFTongXin_Noncommercial-Regular.ttf */,
+				7D1637C120D02B4B00F42A2C /* MFZhiHei_Noncommercial-Regular.ttf */,
+			);
+			path = fonts;
+			sourceTree = "<group>";
+		};
 		7D61A6A920CECDF3005CAF77 = {
 			isa = PBXGroup;
 			children = (
@@ -54,6 +73,7 @@
 		7D61A6B420CECDF3005CAF77 /* ChangeFont */ = {
 			isa = PBXGroup;
 			children = (
+				7D1637C620D02B5900F42A2C /* fonts */,
 				7D61A6B520CECDF3005CAF77 /* AppDelegate.swift */,
 				7D61A6B720CECDF3005CAF77 /* ViewController.swift */,
 				7D61A6B920CECDF3005CAF77 /* Main.storyboard */,
@@ -122,6 +142,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7D1637C720D031DB00F42A2C /* Gaspar_Regular.otf in Resources */,
+				7D1637C820D031DB00F42A2C /* MFJinHei_Noncommercial-Regular.ttf in Resources */,
+				7D1637C920D031DB00F42A2C /* MFTongXin_Noncommercial-Regular.ttf in Resources */,
+				7D1637CA20D031DB00F42A2C /* MFZhiHei_Noncommercial-Regular.ttf in Resources */,
 				7D61A6C020CECDF4005CAF77 /* LaunchScreen.storyboard in Resources */,
 				7D61A6BD20CECDF4005CAF77 /* Assets.xcassets in Resources */,
 				7D61A6BB20CECDF3005CAF77 /* Main.storyboard in Resources */,
