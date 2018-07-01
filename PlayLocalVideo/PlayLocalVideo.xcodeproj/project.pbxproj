@@ -12,6 +12,7 @@
 		F5066B6420E9201E00EE2657 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5066B6220E9201E00EE2657 /* Main.storyboard */; };
 		F5066B6620E9202000EE2657 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F5066B6520E9202000EE2657 /* Assets.xcassets */; };
 		F5066B6920E9202000EE2657 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5066B6720E9202000EE2657 /* LaunchScreen.storyboard */; };
+		F5066B7220E9223000EE2657 /* emoji zone.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = F5066B7020E9220600EE2657 /* emoji zone.mp4 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		F5066B6520E9202000EE2657 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F5066B6820E9202000EE2657 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F5066B6A20E9202000EE2657 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F5066B7020E9220600EE2657 /* emoji zone.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "emoji zone.mp4"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,12 +58,21 @@
 			children = (
 				F5066B5E20E9201E00EE2657 /* AppDelegate.swift */,
 				F5066B6020E9201E00EE2657 /* ViewController.swift */,
+				F5066B7120E9221200EE2657 /* videos */,
 				F5066B6220E9201E00EE2657 /* Main.storyboard */,
 				F5066B6520E9202000EE2657 /* Assets.xcassets */,
 				F5066B6720E9202000EE2657 /* LaunchScreen.storyboard */,
 				F5066B6A20E9202000EE2657 /* Info.plist */,
 			);
 			path = PlayLocalVideo;
+			sourceTree = "<group>";
+		};
+		F5066B7120E9221200EE2657 /* videos */ = {
+			isa = PBXGroup;
+			children = (
+				F5066B7020E9220600EE2657 /* emoji zone.mp4 */,
+			);
+			path = videos;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -122,6 +133,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F5066B7220E9223000EE2657 /* emoji zone.mp4 in Resources */,
 				F5066B6920E9202000EE2657 /* LaunchScreen.storyboard in Resources */,
 				F5066B6620E9202000EE2657 /* Assets.xcassets in Resources */,
 				F5066B6420E9201E00EE2657 /* Main.storyboard in Resources */,
