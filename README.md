@@ -8,9 +8,15 @@ learning demo for practice
    - UIControl
    - #selector(@obj func)
    - String(format:)
+
 2. changeFont
 
    - Loading local fonts
    - change fonts
 
+3. playingLocalVideo
+
+   - Playing local video
+
    
+
