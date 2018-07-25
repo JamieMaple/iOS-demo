@@ -7,39 +7,32 @@
 //
 
 import UIKit
-import SnapKit
 
-class ViewController: UIViewController, UITableViewDelegate {
-
-    let tableView: UITableView = {
-        let table = UITableView()
-        table.rowHeight = 100
-        return table
-    }()
-    
+class ViewController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         setUp()
+        setUpTabBar()
     }
     
     func setUp() {
         view.backgroundColor = .white
-        title = "Demo"
-        let mainView = UIView()
-        view.addSubview(mainView)
-        mainView.backgroundColor = .gray
-        mainView.snp.makeConstraints {
-            make in
-            make.edges.equalTo(self.view)
-        }
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    func setUpTabBar() {
+        let homeVC = HomeViewController()
+        let goodsVC = GoodsViewController()
+        
+        homeVC.tabBarItem.title = "Home"
+        
+        goodsVC.tabBarItem.title = "Goods"
+        
+        tabBar.barTintColor = .white
+        homeVC.tabBarItem.setTitleTextAttributes([NSAttributedStringKey.foregroundColor: UIColor(red: 255/255, green: 108/255, blue: 138/255, alpha: 1.0)], for: .selected)
+        goodsVC.tabBarItem.setTitleTextAttributes([NSAttributedStringKey.foregroundColor: UIColor(red: 255/255, green: 108/255, blue: 138/255, alpha: 1.0)], for: .selected)
+        
+        viewControllers = [homeVC, goodsVC]
     }
-
 
 }
 
