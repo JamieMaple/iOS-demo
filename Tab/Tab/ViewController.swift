@@ -11,7 +11,7 @@ import SnapKit
 
 class ViewController: UIViewController {
     private let labels = [UILabel(), UILabel(), UILabel()]
-    private let views = [UIView(), UIView(), UIView()]
+    private let views = [UIViewController(), UIViewController(), UIViewController()]
     private let scrollView = UIScrollView()
     private let lineView = UIView()
     private var viewWidth: Int!
@@ -64,6 +64,9 @@ class ViewController: UIViewController {
             label.backgroundColor = .red
             label.textAlignment = .center
             label.font = UIFont.systemFont(ofSize: 20)
+            label.isUserInteractionEnabled = true
+            let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.handleTap))
+            label.addGestureRecognizer(tapGestureRecognizer)
         }
         // add line
         topBar.addSubview(lineView)
@@ -85,18 +88,18 @@ class ViewController: UIViewController {
         }
         // view collections
         scrollView.backgroundColor = .white
-        views[0].backgroundColor = .orange
-        views[1].backgroundColor = .yellow
-        views[2].backgroundColor = .green
+        views[0].view.backgroundColor = .orange
+        views[1].view.backgroundColor = .yellow
+        views[2].view.backgroundColor = .green
         for (index, view) in views.enumerated() {
-            self.scrollView.addSubview(view)
-            view.snp.makeConstraints { make in
+            self.scrollView.addSubview(view.view)
+            view.view.snp.makeConstraints { make in
                 make.top.equalTo(topBar.snp.bottom)
                 if index == 0 {
                     make.leading.equalTo(scrollView.snp.leading)
                 } else {
                     let prev = views[index - 1]
-                    make.leading.equalTo(prev.snp.trailing)
+                    make.leading.equalTo(prev.view.snp.trailing)
                 }
                 
                 make.width.equalTo(scrollView.snp.width)
@@ -112,16 +115,28 @@ class ViewController: UIViewController {
     }
     
     private func moveLine(percent: CGFloat) {
+        if percent < 0 || percent > 1 {
+            return
+        }
+        lineView.frame.origin.x = scrollView.frame.width * percent
+    }
     
+    @objc private func handleTap(sender: UITapGestureRecognizer) {
+        guard let label = sender.view as?UILabel else {
+            fatalError("cannot get label")
+        }
+        
+        if let index = labels.index(of: label) {
+            var point = CGPoint.zero
+            point.x = CGFloat(index) * scrollView.frame.width
+            self.scrollView.setContentOffset(point, animated: true)
+        }
     }
 }
 
 extension ViewController: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        print(Int(scrollView.contentOffset.x) / viewWidth)
-    }
-    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
-        
+        moveLine(percent: scrollView.contentOffset.x / scrollView.contentSize.width)
     }
 }
 
